@@ -6,17 +6,17 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.12.RELEASE</version>
+        <version>2.7.18</version>
         <relativePath/>
     </parent>
 
     <groupId>io.github.easy4j</groupId>
     <artifactId>meituan-spring-boot-starter</artifactId>
-    <version>1.0.x.20260630-SNAPSHOT</version>
+    <version>2.0.x.20260630-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>Spring Boot starter for Meituan SDK Extension (line 1.0.x; Spring Boot 2.3.12.RELEASE; compile JDK 8)</description>
+    <description>Spring Boot starter for Meituan SDK Extension (line 2.0.x; Spring Boot 2.7.18; compile JDK 8)</description>
     <url>https://github.com/easy-4-java/${project.artifactId}</url>
 
     <!-- 开源协议采用 Apache 2.0 协议 -->

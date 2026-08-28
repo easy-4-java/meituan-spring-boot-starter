@@ -2,12 +2,12 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-[![Java](https://img.shields.io/badge/Java-8-orange)](https://github.com/easy-4-java/meituan-spring-boot-starter) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+[![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/meituan-spring-boot-starter) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
 > 美团开放平台多租户 SDK（[meituan-sdk-extension](https://github.com/easy-4-java/meituan-sdk-extension)）
 > 的 Spring Boot Starter：一个依赖完成 `meituan.*` 配置绑定、租户存储、官方 client
 > 工厂、租户感知执行器与全部业务 service 的装配。本分支面向 Spring Boot
-> **2.7.18** / JDK **8**。
+> **3.0.13** / JDK **17**。
 
 ## 目录
 
@@ -53,8 +53,8 @@
 
 | 依赖 | 版本（本分支） |
 | :--- | :--- |
-| Java | 1.8+ |
-| Spring Boot | 2.7.18 |
+| Java | 17+ |
+| Spring Boot | 3.0.13 |
 | 核心 SDK | `io.github.easy4j:meituan-sdk-extension` |
 | 官方 SDK | `com.sankuai.sjst:MtOpJavaSDK`（由核心仓库以 `libs/` 内置） |
 
@@ -78,7 +78,7 @@
 <dependency>
     <groupId>io.github.easy4j</groupId>
     <artifactId>meituan-spring-boot-starter</artifactId>
-    <version>2.0.x.20260630-SNAPSHOT</version>
+    <version>3.0.x.20260630-SNAPSHOT</version>
 </dependency>
 ```
 

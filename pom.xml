@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
+    <modelVersion>4.1.0</modelVersion>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.16</version>
+        <version>4.0.7</version>
         <relativePath/>
     </parent>
 
     <groupId>io.github.easy4j</groupId>
     <artifactId>meituan-spring-boot-starter</artifactId>
-    <version>3.5.x.20260630-SNAPSHOT</version>
+    <version>4.0.x.20260630-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>Spring Boot starter for Meituan SDK Extension (line 3.5.x; Spring Boot 3.5.16; compile JDK 17)</description>
+    <description>Spring Boot starter for Meituan SDK Extension (line 4.0.x; Spring Boot 4.0.7; compile JDK 21)</description>
     <url>https://github.com/easy-4-java/${project.artifactId}</url>
 
     <!-- 开源协议采用 Apache 2.0 协议 -->
@@ -49,14 +49,14 @@
     </developers>
 
     <properties>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.version>3.9.16</maven.version>
+        <maven.version>4.0.0-rc-5</maven.version>
         <!-- Third-Party Dependencies -->
-        <meituan-sdk-extension.version>2.0.x.20260630-SNAPSHOT</meituan-sdk-extension.version>
+        <meituan-sdk-extension.version>3.0.x.20260630-SNAPSHOT</meituan-sdk-extension.version>
         <!-- Maven Plugin Dependencies -->
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
         <maven-deploy-plugin.version>3.1.4</maven-deploy-plugin.version>
@@ -157,7 +157,7 @@
                                 <rules>
                                     <requireMavenVersion>
                                         <message>You are running an older version of Maven. This application requires at least Maven ${maven.version}.</message>
-                                        <version>[3.9.16,)</version>
+                                        <version>[4.0.0-rc-5,)</version>
                                     </requireMavenVersion>
                                     <requireJavaVersion>
                                         <message>You are running an older version of Java. This application requires at least JDK ${java.version}.</message>

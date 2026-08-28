@@ -2,13 +2,13 @@
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-[![Spring Boot 3.5.16](https://img.shields.io/badge/Spring%20Boot-3.5.16%20Line-35x-green)](https://github.com/easy-4-java/meituan-spring-boot-starter) [![Java](https://img.shields.io/badge/Java-17-orange)](https://github.com/easy-4-java/meituan-spring-boot-starter) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+[![Spring Boot 4.0.7](https://img.shields.io/badge/Spring%20Boot-4.0.7%20Line-40x-green)](https://github.com/easy-4-java/meituan-spring-boot-starter) [![Java](https://img.shields.io/badge/Java-21-orange)](https://github.com/easy-4-java/meituan-spring-boot-starter) [![License](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
 > Spring Boot starter for the Meituan Open Platform multi-tenant SDK
 > ([meituan-sdk-extension](https://github.com/easy-4-java/meituan-spring-boot-starter)): one
 > dependency wires config binding, tenant storage, the official-client factory, the
 > tenant-aware executor and all business services. This branch targets
-> Spring Boot **3.5.16** on JDK **17**.
+> Spring Boot **4.0.7** on JDK **21**.
 
 ## Table of Contents
 
@@ -55,8 +55,8 @@ Boot version (see [section 10](#10-versioning--branches)).
 
 | Dependency | Version (this branch) |
 | :--- | :--- |
-| Java | 17+ |
-| Spring Boot | 3.5.16 |
+| Java | 21+ |
+| Spring Boot | 4.0.7 |
 | Core SDK | `io.github.easy4j:meituan-sdk-extension` |
 | Official SDK | `com.sankuai.sjst:MtOpJavaSDK` (vendored by the core repo under `libs/`) |
 
@@ -81,7 +81,7 @@ tools, travel, waimai).
 <dependency>
     <groupId>io.github.easy4j</groupId>
     <artifactId>meituan-spring-boot-starter</artifactId>
-    <version>3.5.x.20260630-SNAPSHOT</version>
+    <version>4.0.x.20260630-SNAPSHOT</version>
 </dependency>
 ```
 

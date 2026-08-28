@@ -57,12 +57,6 @@ jobs:
           java-version: ${{ steps.version-line.outputs.java }}
           cache: maven
 
-      - name: Install vendored MtOpJavaSDK (from core SDK repo libs/)
-        run: |
-          mvn -B --no-transfer-progress -q install:install-file \
-            -Dfile=libs/MtOpJavaSDK-1.0-SNAPSHOT.jar
-        working-directory: ${{ runner.temp }}
-
       - name: Install meituan-sdk-extension core from source
         run: |
           git clone --depth 1 -b "${{ steps.version-line.outputs.sdk_branch }}" \

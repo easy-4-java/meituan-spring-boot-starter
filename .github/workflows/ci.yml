@@ -61,10 +61,12 @@ jobs:
         run: |
           git clone --depth 1 -b "${{ steps.version-line.outputs.sdk_branch }}" \
             https://github.com/easy-4-java/meituan-sdk-extension.git sdk
-          mvn -B --no-transfer-progress -q -f sdk/pom.xml install:install-file \
+          cd sdk
+          if [ -x ./mvnw ]; then MW=./mvnw; else MW=mvn; fi
+          $MW -B --no-transfer-progress -q install:install-file \
             -Dfile=libs/MtOpJavaSDK-1.0-SNAPSHOT.jar \
             -DpomFile=libs/MtOpJavaSDK-1.0-SNAPSHOT.pom
-          mvn -B --no-transfer-progress -q -f sdk/pom.xml install -DskipTests
+          $MW -B --no-transfer-progress -q install -DskipTests
 
       - name: Build and verify
         run: |

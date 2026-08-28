@@ -7,7 +7,7 @@
 > 美团开放平台多租户 SDK（[meituan-sdk-extension](https://github.com/easy-4-java/meituan-sdk-extension)）
 > 的 Spring Boot Starter：一个依赖完成 `meituan.*` 配置绑定、租户存储、官方 client
 > 工厂、租户感知执行器与全部业务 service 的装配。本分支面向 Spring Boot
-> **3.0.13** / JDK **17**。
+> **3.1.12** / JDK **17**。
 
 ## 目录
 
@@ -54,7 +54,7 @@
 | 依赖 | 版本（本分支） |
 | :--- | :--- |
 | Java | 17+ |
-| Spring Boot | 3.0.13 |
+| Spring Boot | 3.1.12 |
 | 核心 SDK | `io.github.easy4j:meituan-sdk-extension` |
 | 官方 SDK | `com.sankuai.sjst:MtOpJavaSDK`（由核心仓库以 `libs/` 内置） |
 
@@ -78,7 +78,7 @@
 <dependency>
     <groupId>io.github.easy4j</groupId>
     <artifactId>meituan-spring-boot-starter</artifactId>
-    <version>3.0.x.20260630-SNAPSHOT</version>
+    <version>3.1.x.20260630-SNAPSHOT</version>
 </dependency>
 ```
 

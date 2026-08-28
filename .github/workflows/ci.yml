@@ -1,0 +1,87 @@
+# CI：按分支推导 JDK，并从源码构建配套的 meituan-sdk-extension 核心后执行 verify。
+#
+# 版本线 → JDK：feature/1.0.x、feature/2.0.x → 8；feature/3.0.x–3.5.x → 17；feature/4.0.x、feature/4.1.x → 21
+name: CI
+
+on:
+  push:
+    branches: [feature/1.0.x, feature/2.0.x, feature/3.0.x, feature/3.1.x, feature/3.2.x, feature/3.3.x, feature/3.4.x, feature/3.5.x, feature/4.0.x, feature/4.1.x]
+  pull_request:
+    branches: [feature/1.0.x, feature/2.0.x, feature/3.0.x, feature/3.1.x, feature/3.2.x, feature/3.3.x, feature/3.4.x, feature/3.5.x, feature/4.0.x, feature/4.1.x]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: JDK Build & Verify
+    if: >-
+      github.event_name != 'pull_request' ||
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Resolve version line
+        id: version-line
+        env:
+          VERSION_LINE: ${{ github.base_ref || github.ref_name }}
+        shell: bash
+        run: |
+          case "$VERSION_LINE" in
+            feature/1.0.x|feature/2.0.x)
+              echo "java=8" >> "$GITHUB_OUTPUT"
+              echo "sdk_branch=feature/1.0.x" >> "$GITHUB_OUTPUT"
+              ;;
+            feature/3.0.x|feature/3.1.x|feature/3.2.x|feature/3.3.x|feature/3.4.x|feature/3.5.x)
+              echo "java=17" >> "$GITHUB_OUTPUT"
+              echo "sdk_branch=feature/2.0.x" >> "$GITHUB_OUTPUT"
+              ;;
+            feature/4.0.x|feature/4.1.x)
+              echo "java=21" >> "$GITHUB_OUTPUT"
+              echo "sdk_branch=feature/3.0.x" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "Unsupported version line: $VERSION_LINE" >&2
+              exit 1
+              ;;
+          esac
+
+      - name: Checkout source
+        uses: actions/checkout@v7
+
+      - name: Set up JDK ${{ steps.version-line.outputs.java }}
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: ${{ steps.version-line.outputs.java }}
+          cache: maven
+
+      - name: Install vendored MtOpJavaSDK (from core SDK repo libs/)
+        run: |
+          mvn -B --no-transfer-progress -q install:install-file \
+            -Dfile=libs/MtOpJavaSDK-1.0-SNAPSHOT.jar
+        working-directory: ${{ runner.temp }}
+
+      - name: Install meituan-sdk-extension core from source
+        run: |
+          git clone --depth 1 -b "${{ steps.version-line.outputs.sdk_branch }}" \
+            https://github.com/easy-4-java/meituan-sdk-extension.git sdk
+          mvn -B --no-transfer-progress -q -f sdk/pom.xml install:install-file \
+            -Dfile=sdk/libs/MtOpJavaSDK-1.0-SNAPSHOT.jar \
+            -DpomFile=sdk/libs/MtOpJavaSDK-1.0-SNAPSHOT.pom
+          mvn -B --no-transfer-progress -q -f sdk/pom.xml install -DskipTests
+
+      - name: Build and verify
+        run: |
+          if [ -f .mvn/wrapper/maven-wrapper.properties ]; then MW=./mvnw; else MW=mvn; fi
+          $MW -B --no-transfer-progress clean verify
+
+      - name: Upload surefire reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: surefire-reports
+          path: target/surefire-reports
+          if-no-files-found: ignore
+          retention-days: 14

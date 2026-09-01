@@ -78,7 +78,7 @@
 <dependency>
     <groupId>io.github.easy4j</groupId>
     <artifactId>meituan-spring-boot-starter</artifactId>
-    <version>3.0.x.20260630-SNAPSHOT</version>
+    <version>3.0.x.20260831-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -139,20 +139,20 @@ CI 会根据分支名推导 JDK，并在校验前从源码安装核心 SDK，因
 
 ## 10. 版本与分支
 
-每个 Spring Boot 版本线一条分支；版本号为 `<line>.20260630-SNAPSHOT`：
+每个 Spring Boot 版本线一条分支；版本号为 `<line>.20260831-SNAPSHOT`：
 
 | 分支 | Spring Boot | 编译 JDK | 核心 SDK 分支 | 版本 |
 | :--- | :--- | :--- | :--- | :--- |
-| `feature/1.0.x` | 2.3.12.RELEASE | 1.8 | `feature/1.0.x` | `1.0.x.20260630-SNAPSHOT` |
-| `feature/2.0.x` | 2.7.18 | 1.8 | `feature/1.0.x` | `2.0.x.20260630-SNAPSHOT` |
-| `feature/3.0.x` | 3.0.13 | 17 | `feature/2.0.x` | `3.0.x.20260630-SNAPSHOT` |
-| `feature/3.1.x` | 3.1.12 | 17 | `feature/2.0.x` | `3.1.x.20260630-SNAPSHOT` |
-| `feature/3.2.x` | 3.2.12 | 17 | `feature/2.0.x` | `3.2.x.20260630-SNAPSHOT` |
-| `feature/3.3.x` | 3.3.13 | 17 | `feature/2.0.x` | `3.3.x.20260630-SNAPSHOT` |
-| `feature/3.4.x` | 3.4.13 | 17 | `feature/2.0.x` | `3.4.x.20260630-SNAPSHOT` |
-| `feature/3.5.x` | 3.5.16 | 17 | `feature/2.0.x` | `3.5.x.20260630-SNAPSHOT` |
-| `feature/4.0.x` | 4.0.7 | 21 | `feature/3.0.x` | `4.0.x.20260630-SNAPSHOT` |
-| `feature/4.1.x` | 4.1.0 | 21 | `feature/3.0.x` | `4.1.x.20260630-SNAPSHOT` |
+| `feature/1.0.x` | 2.3.12.RELEASE | 1.8 | `feature/1.0.x` | `1.0.x.20260831-SNAPSHOT` |
+| `feature/2.0.x` | 2.7.18 | 1.8 | `feature/1.0.x` | `2.0.x.20260831-SNAPSHOT` |
+| `feature/3.0.x` | 3.0.13 | 17 | `feature/2.0.x` | `3.0.x.20260831-SNAPSHOT` |
+| `feature/3.1.x` | 3.1.12 | 17 | `feature/2.0.x` | `3.1.x.20260831-SNAPSHOT` |
+| `feature/3.2.x` | 3.2.12 | 17 | `feature/2.0.x` | `3.2.x.20260831-SNAPSHOT` |
+| `feature/3.3.x` | 3.3.13 | 17 | `feature/2.0.x` | `3.3.x.20260831-SNAPSHOT` |
+| `feature/3.4.x` | 3.4.13 | 17 | `feature/2.0.x` | `3.4.x.20260831-SNAPSHOT` |
+| `feature/3.5.x` | 3.5.16 | 17 | `feature/2.0.x` | `3.5.x.20260831-SNAPSHOT` |
+| `feature/4.0.x` | 4.0.7 | 21 | `feature/3.0.x` | `4.0.x.20260831-SNAPSHOT` |
+| `feature/4.1.x` | 4.1.0 | 21 | `feature/3.0.x` | `4.1.x.20260831-SNAPSHOT` |
 
 ## 11. 贡献与许可
 

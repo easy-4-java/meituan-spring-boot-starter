@@ -81,7 +81,7 @@ tools, travel, waimai).
 <dependency>
     <groupId>io.github.easy4j</groupId>
     <artifactId>meituan-spring-boot-starter</artifactId>
-    <version>4.0.x.20260630-SNAPSHOT</version>
+    <version>4.0.x.20260831-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -143,20 +143,20 @@ before verifying, so no private repository access is required. JaCoCo enforces
 
 ## 10. Versioning & Branches
 
-One branch per Spring Boot line; the version is `<line>.20260630-SNAPSHOT`:
+One branch per Spring Boot line; the version is `<line>.20260831-SNAPSHOT`:
 
 | Branch | Spring Boot | Compile JDK | Core SDK line | Version |
 | :--- | :--- | :--- | :--- | :--- |
-| `feature/1.0.x` | 2.3.12.RELEASE | 1.8 | `feature/1.0.x` | `1.0.x.20260630-SNAPSHOT` |
-| `feature/2.0.x` | 2.7.18 | 1.8 | `feature/1.0.x` | `2.0.x.20260630-SNAPSHOT` |
-| `feature/3.0.x` | 3.0.13 | 17 | `feature/2.0.x` | `3.0.x.20260630-SNAPSHOT` |
-| `feature/3.1.x` | 3.1.12 | 17 | `feature/2.0.x` | `3.1.x.20260630-SNAPSHOT` |
-| `feature/3.2.x` | 3.2.12 | 17 | `feature/2.0.x` | `3.2.x.20260630-SNAPSHOT` |
-| `feature/3.3.x` | 3.3.13 | 17 | `feature/2.0.x` | `3.3.x.20260630-SNAPSHOT` |
-| `feature/3.4.x` | 3.4.13 | 17 | `feature/2.0.x` | `3.4.x.20260630-SNAPSHOT` |
-| `feature/3.5.x` | 3.5.16 | 17 | `feature/2.0.x` | `3.5.x.20260630-SNAPSHOT` |
-| `feature/4.0.x` | 4.0.7 | 21 | `feature/3.0.x` | `4.0.x.20260630-SNAPSHOT` |
-| `feature/4.1.x` | 4.1.0 | 21 | `feature/3.0.x` | `4.1.x.20260630-SNAPSHOT` |
+| `feature/1.0.x` | 2.3.12.RELEASE | 1.8 | `feature/1.0.x` | `1.0.x.20260831-SNAPSHOT` |
+| `feature/2.0.x` | 2.7.18 | 1.8 | `feature/1.0.x` | `2.0.x.20260831-SNAPSHOT` |
+| `feature/3.0.x` | 3.0.13 | 17 | `feature/2.0.x` | `3.0.x.20260831-SNAPSHOT` |
+| `feature/3.1.x` | 3.1.12 | 17 | `feature/2.0.x` | `3.1.x.20260831-SNAPSHOT` |
+| `feature/3.2.x` | 3.2.12 | 17 | `feature/2.0.x` | `3.2.x.20260831-SNAPSHOT` |
+| `feature/3.3.x` | 3.3.13 | 17 | `feature/2.0.x` | `3.3.x.20260831-SNAPSHOT` |
+| `feature/3.4.x` | 3.4.13 | 17 | `feature/2.0.x` | `3.4.x.20260831-SNAPSHOT` |
+| `feature/3.5.x` | 3.5.16 | 17 | `feature/2.0.x` | `3.5.x.20260831-SNAPSHOT` |
+| `feature/4.0.x` | 4.0.7 | 21 | `feature/3.0.x` | `4.0.x.20260831-SNAPSHOT` |
+| `feature/4.1.x` | 4.1.0 | 21 | `feature/3.0.x` | `4.1.x.20260831-SNAPSHOT` |
 
 ## 11. Contributing & License
 

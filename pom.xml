@@ -49,6 +49,8 @@
     </developers>
 
     <properties>
+        <!-- CVE-2022-1471/25857: snakeyaml 1.30 → 1.33（Boot 2.7 官方同款，JDK 8 兼容） -->
+        <snakeyaml.version>1.33</snakeyaml.version>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -312,6 +314,8 @@
                 <jdk>[1.8,)</jdk>
             </activation>
             <properties>
+        <!-- CVE-2022-1471/25857: snakeyaml 1.30 → 1.33（Boot 2.7 官方同款，JDK 8 兼容） -->
+        <snakeyaml.version>1.33</snakeyaml.version>
                 <additionalparam>-Xdoclint:none</additionalparam>
             </properties>
         </profile>

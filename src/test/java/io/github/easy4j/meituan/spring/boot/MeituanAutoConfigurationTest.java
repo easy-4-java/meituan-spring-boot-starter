@@ -1,5 +1,11 @@
 package io.github.easy4j.meituan.spring.boot;
 
+import com.meituan.sdk.internal.exceptions.MtSdkException;
+import com.meituan.sdk.internal.utils.ValidationUtil;
+import com.meituan.sdk.model.ddzhkh.dingdan.orderQueryorder.OrderQueryorderRequest;
+import io.github.easy4j.meituan.model.jmcard.MeituanMemberClaimRequest;
+import io.github.easy4j.meituan.model.jmcard.MeituanMemberClaimUserRight;
+import jakarta.validation.Validation;
 import io.github.easy4j.meituan.client.MeituanRequestExecutor;
 import io.github.easy4j.meituan.config.MeituanConfig;
 import io.github.easy4j.meituan.service.MeituanWaimaiService;
@@ -11,6 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Starter 自动配置基础测试：验证 {@code meituan.*} 配置绑定与核心 Bean 注册。
@@ -75,5 +82,17 @@ class MeituanAutoConfigurationTest {
     void shouldResolveTenantConfigFromStorage() {
         assertTrue(tenantConfigStorage.findByTenantId("tenant-a").isPresent());
         assertEquals("token-a", tenantConfigStorage.findByTenantId("tenant-a").get().getAppAuthToken());
+    }
+    /** Boot 3 实际装配后，官方 SDK 与扩展 DTO 必须共享 Jakarta 校验。 */
+    @Test
+    void shouldValidateOfficialAndExtensionRequestsWithJakarta() {
+        assertNotNull(requestExecutor);
+        assertThrows(MtSdkException.class, () -> ValidationUtil.validate(new OrderQueryorderRequest()));
+        var request = new MeituanMemberClaimRequest();
+        request.setUserRightInfo(new MeituanMemberClaimUserRight());
+        try (var factory = Validation.buildDefaultValidatorFactory()) {
+            assertTrue(factory.getValidator().validate(request).stream()
+                    .anyMatch(violation -> "userRightInfo.eventId".equals(violation.getPropertyPath().toString())));
+        }
     }
 }
